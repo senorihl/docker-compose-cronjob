@@ -3,6 +3,7 @@
 
 # Logs
 logs
+!logs/.gitkeep
 *.log
 
 # Runtime data
@@ -28,6 +29,10 @@ build/Release
 # Dependency directory
 # https://docs.npmjs.com/cli/shrinkwrap#caveats
 node_modules
+
+# Generated css
+public/**/*.css
+public/**/*.css.map
 
 # Debug log from npm
 npm-debug.log
