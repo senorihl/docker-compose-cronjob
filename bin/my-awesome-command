@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+console.log('Running my-awesome-command');
+console.log('Please add your logic in there ;-)');
