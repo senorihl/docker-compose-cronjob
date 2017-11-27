@@ -1,9 +1,18 @@
 version: '2'
 services:
   myapp:
-     build: .
-     volumes:
-         - .:/app
-         - /app/node_modules
-     ports:
-         - 3000:3000
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 3000:3000
+  mycron:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    entrypoint: sh /app/crontab.sh
+#    we don't need ports with this because it will execute the crontab
+#    ports:
+#      - 3000:3000
