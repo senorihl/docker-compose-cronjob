@@ -1,9 +1,9 @@
-FROM node:latest
-RUN mkdir /src
-RUN npm install nodemon -g
-WORKDIR /src
-ADD app/package.json /src/package.json
+FROM node:8
+
+ADD . /var/www/myapp
+WORKDIR /var/www/myapp
+RUN rm -rf node_modules package-lock.json
 RUN npm install
-ADD app/nodemon.json /src/nodemon.json
 EXPOSE 3000
-CMD npm start
+
+ENTRYPOINT ["npm", "start"]
