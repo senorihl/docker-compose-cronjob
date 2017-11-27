@@ -3,21 +3,7 @@ services:
   myapp:
      build: .
      volumes:
-         - .:/src:rw
+         - .:/app
+         - /app/node_modules
      ports:
          - 3000:3000
-     links:
-         - mongodb
-     depends_on:
-         - mongodb
-  mongodb:
-     image: mongo:latest
-     environment:
-       - MONGO_DATA_DIR=/data/db
-     volumes:
-       - db_data:/data/db
-     ports:
-         - 27017:27017
-
-volumes:
-    db_data:
